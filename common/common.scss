@@ -53,7 +53,9 @@ body {
   display: block;
   width: 30px;
   height: 30px;
-  object-fit: contain;
+  box-sizing: border-box;
+  padding-inline-start: 30px;
+  overflow: hidden;
 }
 
 .d-header .title:not(.title--minimized) a::after {
