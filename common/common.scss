@@ -1,0 +1,787 @@
+// TECKNUS Community visual theme.
+// Colors follow the TECKNUS institutional site.
+// The mark itself is the copied official file, not drawn here.
+
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --heading-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.d-header {
+  height: 54px;
+  box-shadow: none;
+}
+
+.d-header .title {
+  --d-logo-height: 30px;
+}
+
+.d-header .title:not(.title--minimized) {
+  overflow: visible;
+}
+
+.d-header .title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.d-header .title a:hover {
+  text-decoration: none;
+}
+
+.d-header #site-logo {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.d-header .title:not(.title--minimized) a::after {
+  content: "TECKNUS";
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+h1,
+h2,
+.h1,
+.h2 {
+  font-weight: 500;
+  letter-spacing: -0.4px;
+}
+
+.custom-footer-content {
+  background: #f5f5f7;
+  color: #6e6e73;
+  font-size: 12px;
+}
+
+.tecknus-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+}
+
+.powered-by-discourse,
+footer.container.wrap .powered-by-link {
+  display: none;
+}
+
+footer.container.wrap {
+  background: #f5f5f7;
+  color: #6e6e73;
+  font-size: 12px;
+  padding: 22px 24px;
+}
+
+@media (max-width: 650px) {
+  .d-header .title:not(.title--minimized) a::after {
+    letter-spacing: 1.5px;
+    font-size: 14px;
+  }
+
+  .tecknus-footer {
+    flex-wrap: wrap;
+    padding: 16px 20px;
+  }
+}
+
+// Login, signup, and password recovery use the TECKNUS Social auth screen.
+// These rules stay on those pages so the forum header and footer are unchanged.
+
+.tecknus-auth-header,
+.tecknus-auth-mosaic,
+.tecknus-auth-footer-nav {
+  display: none;
+}
+
+body.login-page,
+body.signup-page,
+body.password-reset-page,
+body.activate-account-page {
+  box-sizing: border-box;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+@media (min-width: 651px) {
+  body.login-page,
+  body.signup-page,
+  body.password-reset-page,
+  body.activate-account-page {
+    padding-bottom: 50px;
+  }
+}
+
+body.login-page .d-header,
+body.signup-page .d-header,
+body.password-reset-page .d-header,
+body.activate-account-page .d-header {
+  display: none;
+}
+
+body.login-page #main,
+body.signup-page #main,
+body.password-reset-page #main,
+body.activate-account-page #main,
+body.login-page .discourse-root,
+body.signup-page .discourse-root,
+body.password-reset-page .discourse-root,
+body.activate-account-page .discourse-root,
+body.login-page #main-outlet-wrapper,
+body.signup-page #main-outlet-wrapper,
+body.password-reset-page #main-outlet-wrapper,
+body.activate-account-page #main-outlet-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  background: #fff;
+}
+
+body.login-page #main-container,
+body.signup-page #main-container,
+body.password-reset-page #main-container,
+body.activate-account-page #main-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+body.login-page .tecknus-auth-header,
+body.signup-page .tecknus-auth-header,
+body.password-reset-page .tecknus-auth-header,
+body.activate-account-page .tecknus-auth-header {
+  min-height: 54px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.tecknus-auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: #242424;
+  text-decoration: none;
+}
+
+.tecknus-auth-brand img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.tecknus-auth-brand:hover {
+  text-decoration: none;
+  color: #242424;
+}
+
+body.login-page .tecknus-auth-header nav,
+body.signup-page .tecknus-auth-header nav,
+body.password-reset-page .tecknus-auth-header nav,
+body.activate-account-page .tecknus-auth-header nav,
+body.login-page .tecknus-auth-footer-nav,
+body.signup-page .tecknus-auth-footer-nav,
+body.password-reset-page .tecknus-auth-footer-nav,
+body.activate-account-page .tecknus-auth-footer-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+body.login-page .tecknus-auth-header nav,
+body.signup-page .tecknus-auth-header nav,
+body.password-reset-page .tecknus-auth-header nav,
+body.activate-account-page .tecknus-auth-header nav {
+  font-size: 14px;
+  color: #242424;
+}
+
+.tecknus-auth-header nav a,
+.tecknus-auth-footer-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tecknus-auth-header nav a:hover,
+.tecknus-auth-footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.tecknus-auth-lang {
+  max-width: 148px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #555;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+body.login-page #main-outlet,
+body.signup-page #main-outlet,
+body.password-reset-page #main-outlet,
+body.activate-account-page #main-outlet {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+body.login-page .login-fullpage,
+body.signup-page .signup-fullpage,
+body.password-reset-page .password-reset,
+body.activate-account-page .activate-account {
+  width: min(400px, calc(100% - 48px));
+  max-width: 400px;
+  margin: auto;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+body.login-page .login-body,
+body.signup-page .signup-body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  float: none;
+}
+
+body.login-page .login-left-side,
+body.login-page .login-right-side,
+body.signup-page .login-left-side,
+body.signup-page .login-right-side,
+body.signup-page .signup-left-side,
+body.password-reset-page .login-left-side,
+body.password-reset-page .change-password-form {
+  width: 100%;
+  max-width: 400px;
+  float: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body.login-page .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+body.login-page .alt-placeholder,
+body.signup-page .alt-placeholder {
+  position: static;
+  order: -1;
+  transform: none;
+  opacity: 1;
+  margin: 0 0 2px;
+  padding: 0;
+  height: auto;
+  pointer-events: none;
+}
+
+body.login-page .input-group input,
+body.signup-page .input-group input {
+  padding: 0 12px;
+}
+
+body.login-page .login__password-links {
+  margin: 0;
+  text-align: center;
+}
+
+body.login-page .login-page-cta__no-account-yet::before,
+body.signup-page .signup-page-cta__existing-account::before {
+  display: none;
+}
+
+body.login-page .login-page-cta__buttons,
+body.signup-page .signup-page-cta__buttons {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+body.login-page .login-page-cta__login,
+body.signup-page .signup-page-cta__signup {
+  flex: 1 0 100%;
+}
+
+body.login-page .login-title,
+body.signup-page .login-title,
+body.password-reset-page h2,
+body.activate-account-page h1,
+body.activate-account-page h2,
+body.activate-account-page h3 {
+  margin: 0 0 22px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  color: #242424;
+  text-align: left;
+}
+
+body.login-page .login-subheader,
+body.signup-page .login-subheader {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #6e6e73;
+}
+
+body.login-page .login-right-side .btn,
+body.signup-page .login-right-side .btn,
+body.login-page .login-buttons .btn,
+body.signup-page .login-buttons .btn {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  background: #fff;
+  color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+body.login-page .login-right-side .btn:hover,
+body.signup-page .login-right-side .btn:hover,
+body.login-page .login-buttons .btn:hover,
+body.signup-page .login-buttons .btn:hover {
+  background: #f7fbfa;
+  border-color: #8fd4ce;
+  color: #242424;
+}
+
+.tecknus-auth-or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8e8e93;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+.tecknus-auth-or::before,
+.tecknus-auth-or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e4e4e7;
+}
+
+body.login-page .input-group,
+body.signup-page .input-group,
+body.password-reset-page .input {
+  margin-bottom: 2px;
+}
+
+body.login-page .input-group input,
+body.signup-page .input-group input,
+body.signup-page .input-group select,
+body.password-reset-page input,
+body.password-reset-page .d-password-field input,
+body.activate-account-page input,
+body.login-page .d-modal input,
+body.login-page .d-modal select {
+  height: 36px;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  background: #fff;
+  color: #242424;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+body.login-page .input-group input::placeholder,
+body.signup-page .input-group input::placeholder,
+body.password-reset-page input::placeholder {
+  color: #8e8e93;
+}
+
+body.login-page .input-group input:focus,
+body.signup-page .input-group input:focus,
+body.password-reset-page input:focus,
+body.login-page .d-modal input:focus {
+  border-color: #0a6e68;
+  box-shadow: 0 0 0 3px rgba(10, 110, 104, 0.14);
+  outline: none;
+}
+
+body.login-page .alt-placeholder,
+body.signup-page .alt-placeholder,
+body.signup-page .input-group label,
+body.password-reset-page label {
+  color: #3a3a3c;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+body.login-page .login__password-links,
+body.login-page .login-page-cta__no-account-yet,
+body.signup-page .signup-page-cta,
+body.signup-page .signup-page-cta__disclaimer,
+body.signup-page .signup-page-cta__existing-account,
+body.signup-page .disclaimer,
+body.login-page .d-modal .modal-footer,
+body.password-reset-page p,
+body.activate-account-page p {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #6e6e73;
+}
+
+body.login-page .login__password-links a,
+body.login-page .login-page-cta__signup,
+body.signup-page .signup-page-cta a,
+body.signup-page .btn-flat,
+body.signup-page .disclaimer a,
+body.login-page .d-modal a,
+body.password-reset-page a,
+body.activate-account-page a {
+  color: #0a6e68;
+  font-size: 12px;
+  font-weight: 500;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  height: auto;
+  padding: 0;
+}
+
+body.login-page .login-page-cta {
+  margin-top: 8px;
+}
+
+body.login-page .login-page-cta__buttons,
+body.signup-page .signup-page-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body.login-page .btn-primary,
+body.signup-page .btn-primary,
+body.password-reset-page .btn-primary,
+body.activate-account-page .btn-primary,
+body.login-page .d-modal .btn-primary,
+body.login-page button.btn-large.btn-primary,
+body.signup-page button.btn-large.btn-primary {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: #0a6e68;
+  color: #fff;
+  font-size: 14px !important;
+  font-weight: 500;
+  padding: 0 16px;
+  box-shadow: none;
+}
+
+body.login-page .btn-primary:hover,
+body.signup-page .btn-primary:hover,
+body.password-reset-page .btn-primary:hover,
+body.activate-account-page .btn-primary:hover,
+body.login-page .d-modal .btn-primary:hover {
+  background: #085e59;
+  color: #fff;
+}
+
+body.login-page .alert-error,
+body.signup-page .alert-error,
+body.password-reset-page .alert-error,
+body.activate-account-page .alert-error,
+body.login-page .d-modal .alert-error,
+body.login-page .d-input-tip.bad,
+body.signup-page .d-input-tip.bad,
+body.password-reset-page .d-input-tip.bad,
+body.login-page .tip.bad,
+body.signup-page .tip.bad {
+  background: transparent;
+  border: 0;
+  color: #c2410c;
+  font-size: 11px;
+  line-height: 14px;
+  padding: 0;
+  box-shadow: none;
+}
+
+body.login-page .custom-footer-content,
+body.signup-page .custom-footer-content,
+body.password-reset-page .custom-footer-content,
+body.activate-account-page .custom-footer-content {
+  background: transparent;
+  padding: 0;
+  margin-top: 12px;
+}
+
+body.login-page .tecknus-auth-mosaic,
+body.signup-page .tecknus-auth-mosaic,
+body.password-reset-page .tecknus-auth-mosaic,
+body.activate-account-page .tecknus-auth-mosaic {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px auto 10px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.tecknus-auth-mosaic-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tecknus-auth-mosaic img {
+  width: min(34px, calc((100% - 48px) / 16));
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 22%;
+  background: #fff;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.14),
+    0 3px 8px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+body.login-page .tecknus-footer,
+body.signup-page .tecknus-footer,
+body.password-reset-page .tecknus-footer,
+body.activate-account-page .tecknus-footer {
+  padding: 10px 24px 12px;
+  background: #f5f5f7;
+  color: #6e6e73;
+  font-size: 12px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+  body.login-page .tecknus-auth-header,
+  body.signup-page .tecknus-auth-header,
+  body.password-reset-page .tecknus-auth-header,
+  body.activate-account-page .tecknus-auth-header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+
+  body.login-page .tecknus-auth-header nav,
+  body.signup-page .tecknus-auth-header nav,
+  body.password-reset-page .tecknus-auth-header nav,
+  body.activate-account-page .tecknus-auth-header nav {
+    order: 3;
+    width: 100%;
+    gap: 22px;
+  }
+
+  body.login-page .tecknus-auth-header nav a,
+  body.signup-page .tecknus-auth-header nav a,
+  body.password-reset-page .tecknus-auth-header nav a,
+  body.activate-account-page .tecknus-auth-header nav a {
+    padding: 8px 0;
+  }
+
+  body.login-page .login-fullpage,
+  body.signup-page .signup-fullpage,
+  body.password-reset-page .password-reset,
+  body.activate-account-page .activate-account {
+    width: min(400px, calc(100% - 40px));
+  }
+
+  body.login-page .tecknus-footer,
+  body.signup-page .tecknus-footer,
+  body.password-reset-page .tecknus-footer,
+  body.activate-account-page .tecknus-footer {
+    flex-wrap: wrap;
+    padding: 10px 20px 12px;
+  }
+}
+
+// Theme assets. Discourse exposes these variables from about.json.
+img.tecknus-asset {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+img.tecknus-asset[data-tecknus-asset="tecknus_mark"] {
+  background-image: url($tecknus_mark);
+}
+img.tecknus-asset[data-tecknus-asset="tecknus_original"] {
+  background-image: url($tecknus_original);
+}
+img.tecknus-asset[data-tecknus-asset="favicon_32"] {
+  background-image: url($favicon_32);
+}
+img.tecknus-asset[data-tecknus-asset="apple_touch_icon"] {
+  background-image: url($apple_touch_icon);
+}
+img.tecknus-asset[data-tecknus-asset="platform_bluesky"] {
+  background-image: url($platform_bluesky);
+}
+img.tecknus-asset[data-tecknus-asset="platform_devto"] {
+  background-image: url($platform_devto);
+}
+img.tecknus-asset[data-tecknus-asset="platform_discord"] {
+  background-image: url($platform_discord);
+}
+img.tecknus-asset[data-tecknus-asset="platform_dribbble"] {
+  background-image: url($platform_dribbble);
+}
+img.tecknus-asset[data-tecknus-asset="platform_facebook"] {
+  background-image: url($platform_facebook);
+}
+img.tecknus-asset[data-tecknus-asset="platform_gmb"] {
+  background-image: url($platform_gmb);
+}
+img.tecknus-asset[data-tecknus-asset="platform_hashnode"] {
+  background-image: url($platform_hashnode);
+}
+img.tecknus-asset[data-tecknus-asset="platform_instagram"] {
+  background-image: url($platform_instagram);
+}
+img.tecknus-asset[data-tecknus-asset="platform_kick"] {
+  background-image: url($platform_kick);
+}
+img.tecknus-asset[data-tecknus-asset="platform_lemmy"] {
+  background-image: url($platform_lemmy);
+}
+img.tecknus-asset[data-tecknus-asset="platform_linkedin"] {
+  background-image: url($platform_linkedin);
+}
+img.tecknus-asset[data-tecknus-asset="platform_listmonk"] {
+  background-image: url($platform_listmonk);
+}
+img.tecknus-asset[data-tecknus-asset="platform_mastodon"] {
+  background-image: url($platform_mastodon);
+}
+img.tecknus-asset[data-tecknus-asset="platform_medium"] {
+  background-image: url($platform_medium);
+}
+img.tecknus-asset[data-tecknus-asset="platform_mewe"] {
+  background-image: url($platform_mewe);
+}
+img.tecknus-asset[data-tecknus-asset="platform_moltbook"] {
+  background-image: url($platform_moltbook);
+}
+img.tecknus-asset[data-tecknus-asset="platform_nostr"] {
+  background-image: url($platform_nostr);
+}
+img.tecknus-asset[data-tecknus-asset="platform_pinterest"] {
+  background-image: url($platform_pinterest);
+}
+img.tecknus-asset[data-tecknus-asset="platform_reddit"] {
+  background-image: url($platform_reddit);
+}
+img.tecknus-asset[data-tecknus-asset="platform_skool"] {
+  background-image: url($platform_skool);
+}
+img.tecknus-asset[data-tecknus-asset="platform_slack"] {
+  background-image: url($platform_slack);
+}
+img.tecknus-asset[data-tecknus-asset="platform_telegram"] {
+  background-image: url($platform_telegram);
+}
+img.tecknus-asset[data-tecknus-asset="platform_threads"] {
+  background-image: url($platform_threads);
+}
+img.tecknus-asset[data-tecknus-asset="platform_tiktok"] {
+  background-image: url($platform_tiktok);
+}
+img.tecknus-asset[data-tecknus-asset="platform_tumblr"] {
+  background-image: url($platform_tumblr);
+}
+img.tecknus-asset[data-tecknus-asset="platform_twitch"] {
+  background-image: url($platform_twitch);
+}
+img.tecknus-asset[data-tecknus-asset="platform_vk"] {
+  background-image: url($platform_vk);
+}
+img.tecknus-asset[data-tecknus-asset="platform_whop"] {
+  background-image: url($platform_whop);
+}
+img.tecknus-asset[data-tecknus-asset="platform_wordpress"] {
+  background-image: url($platform_wordpress);
+}
+img.tecknus-asset[data-tecknus-asset="platform_wrapcast"] {
+  background-image: url($platform_wrapcast);
+}
+img.tecknus-asset[data-tecknus-asset="platform_x"] {
+  background-image: url($platform_x);
+}
+img.tecknus-asset[data-tecknus-asset="platform_youtube"] {
+  background-image: url($platform_youtube);
+}
+.d-header #site-logo {
+  background-image: url($tecknus_mark);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

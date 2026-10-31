@@ -1,0 +1,5 @@
+social_url:
+  type: string
+  default: ""
+  description:
+    en: "Public TECKNUS Social address. Leave empty until that address is confirmed. While empty, the Social link keeps its label and has no destination."
