@@ -5,7 +5,6 @@ const COPY = {
     proposal: "The proposal",
     about: "About me",
     community: "Community",
-    social: "Social",
     contact: "Contact",
     privacy: "Privacy",
     language: "Language",
@@ -15,7 +14,6 @@ const COPY = {
     proposal: "La démarche",
     about: "À propos de moi",
     community: "Communauté",
-    social: "Social",
     contact: "Contact",
     privacy: "Confidentialité",
     language: "Langue",
@@ -25,7 +23,6 @@ const COPY = {
     proposal: "A proposta",
     about: "Sobre mim",
     community: "Comunidade",
-    social: "Social",
     contact: "Contato",
     privacy: "Privacidade",
     language: "Idioma",
@@ -34,14 +31,6 @@ const COPY = {
 };
 
 const MARKETING = "https://tecknus.ca";
-
-function configuredSocialUrl() {
-  const value =
-    typeof settings !== "undefined" && typeof settings.social_url === "string"
-      ? settings.social_url.trim()
-      : "";
-  return /^https?:\/\//i.test(value) ? value : "";
-}
 
 function themeUpload(name) {
   const uploads = typeof settings !== "undefined" ? settings.theme_uploads : null;
@@ -198,15 +187,6 @@ function applyChrome() {
     const key = link.getAttribute("data-auth-nav");
     if (copy[key]) {
       link.textContent = copy[key];
-    }
-    if (key === "social") {
-      const social = configuredSocialUrl();
-      if (social) {
-        link.setAttribute("href", social);
-      } else {
-        link.removeAttribute("href");
-      }
-      return;
     }
     if (key === "community") {
       link.setAttribute("href", "https://community.tecknus.ca");

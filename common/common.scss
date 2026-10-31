@@ -102,11 +102,10 @@ footer.container.wrap {
   }
 }
 
-// Login, signup, and password recovery use the TECKNUS Social auth screen.
+// Login, signup, and password recovery keep the TECKNUS header.
 // These rules stay on those pages so the forum header and footer are unchanged.
 
 .tecknus-auth-header,
-.tecknus-auth-mosaic,
 .tecknus-auth-footer-nav {
   display: none;
 }
@@ -576,40 +575,6 @@ body.activate-account-page .custom-footer-content {
   margin-top: 12px;
 }
 
-body.login-page .tecknus-auth-mosaic,
-body.signup-page .tecknus-auth-mosaic,
-body.password-reset-page .tecknus-auth-mosaic,
-body.activate-account-page .tecknus-auth-mosaic {
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 12px auto 10px;
-  padding: 0 24px;
-  box-sizing: border-box;
-}
-
-.tecknus-auth-mosaic-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.tecknus-auth-mosaic img {
-  width: min(34px, calc((100% - 48px) / 16));
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 22%;
-  background: #fff;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.14),
-    0 3px 8px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-}
-
 body.login-page .tecknus-footer,
 body.signup-page .tecknus-footer,
 body.password-reset-page .tecknus-footer,
@@ -682,102 +647,6 @@ img.tecknus-asset[data-tecknus-asset="favicon_32"] {
 }
 img.tecknus-asset[data-tecknus-asset="apple_touch_icon"] {
   background-image: url($apple_touch_icon);
-}
-img.tecknus-asset[data-tecknus-asset="platform_bluesky"] {
-  background-image: url($platform_bluesky);
-}
-img.tecknus-asset[data-tecknus-asset="platform_devto"] {
-  background-image: url($platform_devto);
-}
-img.tecknus-asset[data-tecknus-asset="platform_discord"] {
-  background-image: url($platform_discord);
-}
-img.tecknus-asset[data-tecknus-asset="platform_dribbble"] {
-  background-image: url($platform_dribbble);
-}
-img.tecknus-asset[data-tecknus-asset="platform_facebook"] {
-  background-image: url($platform_facebook);
-}
-img.tecknus-asset[data-tecknus-asset="platform_gmb"] {
-  background-image: url($platform_gmb);
-}
-img.tecknus-asset[data-tecknus-asset="platform_hashnode"] {
-  background-image: url($platform_hashnode);
-}
-img.tecknus-asset[data-tecknus-asset="platform_instagram"] {
-  background-image: url($platform_instagram);
-}
-img.tecknus-asset[data-tecknus-asset="platform_kick"] {
-  background-image: url($platform_kick);
-}
-img.tecknus-asset[data-tecknus-asset="platform_lemmy"] {
-  background-image: url($platform_lemmy);
-}
-img.tecknus-asset[data-tecknus-asset="platform_linkedin"] {
-  background-image: url($platform_linkedin);
-}
-img.tecknus-asset[data-tecknus-asset="platform_listmonk"] {
-  background-image: url($platform_listmonk);
-}
-img.tecknus-asset[data-tecknus-asset="platform_mastodon"] {
-  background-image: url($platform_mastodon);
-}
-img.tecknus-asset[data-tecknus-asset="platform_medium"] {
-  background-image: url($platform_medium);
-}
-img.tecknus-asset[data-tecknus-asset="platform_mewe"] {
-  background-image: url($platform_mewe);
-}
-img.tecknus-asset[data-tecknus-asset="platform_moltbook"] {
-  background-image: url($platform_moltbook);
-}
-img.tecknus-asset[data-tecknus-asset="platform_nostr"] {
-  background-image: url($platform_nostr);
-}
-img.tecknus-asset[data-tecknus-asset="platform_pinterest"] {
-  background-image: url($platform_pinterest);
-}
-img.tecknus-asset[data-tecknus-asset="platform_reddit"] {
-  background-image: url($platform_reddit);
-}
-img.tecknus-asset[data-tecknus-asset="platform_skool"] {
-  background-image: url($platform_skool);
-}
-img.tecknus-asset[data-tecknus-asset="platform_slack"] {
-  background-image: url($platform_slack);
-}
-img.tecknus-asset[data-tecknus-asset="platform_telegram"] {
-  background-image: url($platform_telegram);
-}
-img.tecknus-asset[data-tecknus-asset="platform_threads"] {
-  background-image: url($platform_threads);
-}
-img.tecknus-asset[data-tecknus-asset="platform_tiktok"] {
-  background-image: url($platform_tiktok);
-}
-img.tecknus-asset[data-tecknus-asset="platform_tumblr"] {
-  background-image: url($platform_tumblr);
-}
-img.tecknus-asset[data-tecknus-asset="platform_twitch"] {
-  background-image: url($platform_twitch);
-}
-img.tecknus-asset[data-tecknus-asset="platform_vk"] {
-  background-image: url($platform_vk);
-}
-img.tecknus-asset[data-tecknus-asset="platform_whop"] {
-  background-image: url($platform_whop);
-}
-img.tecknus-asset[data-tecknus-asset="platform_wordpress"] {
-  background-image: url($platform_wordpress);
-}
-img.tecknus-asset[data-tecknus-asset="platform_wrapcast"] {
-  background-image: url($platform_wrapcast);
-}
-img.tecknus-asset[data-tecknus-asset="platform_x"] {
-  background-image: url($platform_x);
-}
-img.tecknus-asset[data-tecknus-asset="platform_youtube"] {
-  background-image: url($platform_youtube);
 }
 .d-header #site-logo {
   background-image: url($tecknus_mark);
